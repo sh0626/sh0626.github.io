@@ -1,0 +1,12 @@
+gem install ffi --version 1.14.2
+gem install i18n --version 0.9.5
+gem install sass-listen --version 4.0.0
+gem install sass --version 3.7.4
+gem install jekyll-sass-converter --version 1.5.2
+gem install listen --version 3.4.1
+gem install kramdown --version 2.3.0
+gem install mercenary --version 0.3.6
+gem install jekyll --version 3.9.0
+gem install jekyll-archives --version 2.2.1
+gem install jekyll-paginate-v2 --version 3.0.0
+gem install jekyll-sitemap --version 1.4.0

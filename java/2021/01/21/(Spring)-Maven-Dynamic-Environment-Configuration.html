@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>(Spring)  Maven 동적 환경구성</title>
+  <meta name="description" content="Maven Properties">
+  
+  <meta name="author" content="sh0626">
+  <meta name="copyright" content="&copy; sh0626 2021">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Maven Properties" />
+  <meta property="og:url" content="http://localhost:4000/java/2021/01/21/(Spring)-Maven-Dynamic-Environment-Configuration.html">
+  <meta property="og:site_name" content="코  드  저  장  소" />
+  <meta property="og:title" content="(Spring)  Maven 동적 환경구성" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="(Spring)  Maven 동적 환경구성">
+  <meta name="twitter:description" content="Maven Properties">
+  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://localhost:4000/java/2021/01/21/(Spring)-Maven-Dynamic-Environment-Configuration.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/java/2021/01/21/(Spring)-Maven-Dynamic-Environment-Configuration.html">
+	<link rel="alternate" type="application/rss+xml" title="코  드  저  장  소" href="http://localhost:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="코  드  저  장  소">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">(Spring)  Maven 동적 환경구성</h1>
+      <p class="info">by <strong>kt1201</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">January 21, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="maven-properties"><strong>Maven Properties</strong></h2>
+
+<p>pom.xml 파일에서 maven 프로퍼티를 사용하여 동적인 환경 구성이 가능하다.</p>
+
+<p>프로퍼티에는 아래 5가지 종류가 있다.</p>
+
+<h4 id="1-maven-project-properties"><strong>1. Maven Project Properties</strong></h4>
+
+<p>Maven Project Object Model(pom.xml) 에 정의된 값.</p>
+
+<p>prefix. : project.*</p>
+
+<p>﻿ex) ${project.build.outputDirectory}</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>${project.groupId}<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>project<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></div>
+
+<h4 id="2-maven-settings-properties"><strong>2. Maven Settings Properties</strong></h4>
+
+<p>~/.m2/settings.xml 에 정의된 값 사용</p>
+
+<p>prefix : settings.*</p>
+
+<h4 id="3-environment-variable-properties"><strong>3. Environment Variable Properties</strong></h4>
+
+<p>환경 변수 값을 참조 할 수 있다.</p>
+
+<p>prefix : env.*</p>
+
+<p>* 예제</p>
+
+<p>env.PATH : 현재의 PATH 정보</p>
+
+<p>env.JAVA_HOME : JDK Home 정보</p>
+
+<p>env.HOME : 유닉스/리눅스 사용자 HOME 디렉토리</p>
+
+<p>env.M2_HOME : Maven Home 정보</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- mvn antrun:run --&gt;</span>
+<span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>maven-antrun-plugin<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;tasks&gt;</span>
+        <span class="nt">&lt;echo&gt;</span>The JAVA_HOME var is ${env.JAVA_HOME}<span class="nt">&lt;/echo&gt;</span>
+    <span class="nt">&lt;/tasks&gt;</span>
+    <span class="nt">&lt;/configuration&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+<span class="c">&lt;!-- [echo] The JAVA_HOME var is C:\Program Files\Java\jdk1.8.0_281 출력된다. --&gt;</span> ﻿
+</code></pre></div></div>
+
+<h4 id="4-java-system-properties"><strong>4. Java System Properties</strong></h4>
+
+<p>System.getProperty() 메소드에서 제공하는 모든 프로퍼티 정보를 참조할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Java System Properties</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>java.version</td>
+      <td>JRE의 버전</td>
+    </tr>
+    <tr>
+      <td>java.vendor</td>
+      <td>JRE의 vendor 정보</td>
+    </tr>
+    <tr>
+      <td>java.home</td>
+      <td>JDK 또는 JRE의 설치 디렉토리</td>
+    </tr>
+    <tr>
+      <td>java.vm.specification.version</td>
+      <td>JVM SPEC 버전</td>
+    </tr>
+    <tr>
+      <td>java.vm.specification.name</td>
+      <td>JVM SPEC 이름</td>
+    </tr>
+    <tr>
+      <td>os.name</td>
+      <td>OS 이름</td>
+    </tr>
+    <tr>
+      <td>os.version</td>
+      <td>OS 버전</td>
+    </tr>
+    <tr>
+      <td>user.home</td>
+      <td>사용자 홈 디렉토리</td>
+    </tr>
+    <tr>
+      <td>user.name</td>
+      <td>사용자 이름</td>
+    </tr>
+    <tr>
+      <td>user.dir</td>
+      <td>현재 디렉토리</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="5-user-defined-properties"><strong>5. User-defined Properties</strong></h4>
+
+<p>아래와 같이 직접 정의해서 사용 할 수 있다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;project&gt;</span>
+    ...
+    <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;env&gt;</span>local<span class="nt">&lt;/env&gt;</span>
+        <span class="nt">&lt;clover.home&gt;</span>analysis_tools/clover<span class="nt">&lt;/clover.home&gt;</span>
+        <span class="nt">&lt;checkstyle.home&gt;</span>analysis_tools/checkstyle<span class="nt">&lt;/checkstyle.home&gt;</span>
+        <span class="nt">&lt;pmd.home&gt;</span>analysis_tools/pmd<span class="nt">&lt;/pmd.home&gt;</span>
+        <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
+    ...
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+</article>
+
+
+
+
+
+
+<section class="post-navigation">
+	<span class="prev-post">
+		
+			<a href="/python/2021/01/06/Site-Packages-Path.html">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+				<span class="page-number">site-packages 경로</span>
+			</a>
+		
+	</span>
+	<span class="next-post">
+		
+			<a href="/java/2021/01/21/(Spring)-Missing-artifact-jdk.toolsjdk.toolsjar1.x.html">
+				<span class="page-number">(Spring) Missing artifact jdk.tools:jdk.tools:jar:1.x</span>
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		
+	</span>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">코  드  저  장  소</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:sonhokg@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">sonhokg@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/sh0626" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sh0626</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong><a href="/feed.xml">blog code</a></strong></p>
+      <p class="text">김선호의 블로그입니다.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

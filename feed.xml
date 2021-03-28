@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>코  드  저  장  소</title>
+    <description>김선호의 블로그입니다.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 28 Mar 2021 23:12:53 +0900</pubDate>
+    <lastBuildDate>Sun, 28 Mar 2021 23:12:53 +0900</lastBuildDate>
+    <generator>Jekyll v3.9.0</generator>
+    
+      <item>
+        <title>환경구축</title>
+        <description>&lt;h3 id=&quot;환경구축&quot;&gt;환경구축&lt;/h3&gt; &lt;p&gt;OS는 Windows 환경이다.&lt;/p&gt; &lt;p&gt;설치 항목은 아래와 같다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Node.js ( https://nodejs.org/ko/download/ )&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Yarn ( &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install --global yarn&lt;/code&gt; )&lt;/p&gt; &lt;p&gt;Node.js과 함께 설치되는 npm을...</description>
+        <pubDate>Fri, 26 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/react/2021/03/26/React-Start.html</link>
+        <guid isPermaLink="true">http://localhost:4000/react/2021/03/26/React-Start.html</guid>
+        
+        
+        <category>react</category>
+        
+      </item>
+    
+      <item>
+        <title>JSX</title>
+        <description>&lt;h2 id=&quot;코드이해&quot;&gt;코드이해&lt;/h2&gt; &lt;p&gt;전에 만들었던 리액트 프로젝트의 src/App.js 를 보자&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* src/App.js */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;...</description>
+        <pubDate>Fri, 26 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/react/2021/03/26/JSX.html</link>
+        <guid isPermaLink="true">http://localhost:4000/react/2021/03/26/JSX.html</guid>
+        
+        
+        <category>react</category>
+        
+      </item>
+    
+      <item>
+        <title>React 소개</title>
+        <description>&lt;h3 id=&quot;프론트엔드-라이브러리프레임워크&quot;&gt;프론트엔드 라이브러리/프레임워크&lt;/h3&gt; &lt;p&gt;프로젝트가 사용자와의 상호작용이 별로 없다면, 프론트엔드 라이브러리는 필요하지 않다. 하지만 프로젝트가 규모가 커지고, 다양한 유저 인터페이스와 상호작용을 제공하게 된다면, 많은 DOM 요소들을 직접 관리하고 그 코드를 정리하는건...</description>
+        <pubDate>Mon, 22 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/react/2021/03/22/React-Intro.html</link>
+        <guid isPermaLink="true">http://localhost:4000/react/2021/03/22/React-Intro.html</guid>
+        
+        
+        <category>react</category>
+        
+      </item>
+    
+      <item>
+        <title>윈도우에서 특정 port kill하기</title>
+        <description>&lt;p&gt;가끔 개발하다보면 Tomcat 프로세스가 좀비처럼 남아서 lock 을 잡고 있을 때가 있다.&lt;/p&gt; &lt;p&gt;그럴 때는 과감히 kill 시킨다.&lt;/p&gt; &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:&lt;span class=&quot;se&quot;&gt;\U&lt;/span&gt;sers&lt;span class=&quot;se&quot;&gt;\A&lt;/span&gt;dministrator&amp;gt;&lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;netstat &lt;span class=&quot;nt&quot;&gt;-aon&lt;/span&gt; 활성 연결 프로토콜...</description>
+        <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/server/2021/03/12/windows-port-kill.html</link>
+        <guid isPermaLink="true">http://localhost:4000/server/2021/03/12/windows-port-kill.html</guid>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>다른 폴더의 파일 import</title>
+        <description>&lt;h5 id=&quot;동일폴더의-파일-import&quot;&gt;동일폴더의 파일 import&lt;/h5&gt; &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;a.py&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h5 id=&quot;상위-폴더의-파일-import&quot;&gt;상위 폴더의 파일 import&lt;/h5&gt; &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span...</description>
+        <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/03/12/other-path-file-import.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/03/12/other-path-file-import.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>트랜잭션(Transaction)</title>
+        <description>&lt;h3 id=&quot;트랜잭션의-정의&quot;&gt;트랜잭션의 정의&lt;/h3&gt; &lt;p&gt;트랜잭션(Transaction)은 데이터베이스의 상태를 변환시키는 하나의 논리적 기능을 수행하기 위한 작업의 단위 또는 한꺼번에 모두 수행되어야 할 일련의 연산들을 의미한다.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;트랜잭션의 특징&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; 트랜잭션은 데이터베이스 시스템에서 병행 제어...</description>
+        <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/database/2021/03/12/Transaction.html</link>
+        <guid isPermaLink="true">http://localhost:4000/database/2021/03/12/Transaction.html</guid>
+        
+        
+        <category>database</category>
+        
+      </item>
+    
+      <item>
+        <title>Pyhive로 python-hive 연결(install sasl 해결)</title>
+        <description>&lt;p&gt;설치할 라이브러리는 아래와 같다.&lt;/p&gt; &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# OS에 sasl 설치&lt;/span&gt; yum &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;libsasl2-dev &lt;span class=&quot;c&quot;&gt;# 파이썬 패키지 설치&lt;/span&gt; pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sasl pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;thrift...</description>
+        <pubDate>Tue, 09 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/03/09/pyhive.html</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/03/09/pyhive.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Container vs VM</title>
+        <description>&lt;h3 id=&quot;container-vs-virtual-machine&quot;&gt;Container vs Virtual Machine&lt;/h3&gt; &lt;p&gt;소프트웨어는 OS와 라이브러리에 의존성을 띈다. 그러므로 하나의 컴퓨터에서 성격이 다른 소프트웨어를 한번에 실행할 때 어려움을 가질 수 있고 관련된 구성을 관리하기가 어렵다. Container는 개별 소프트웨어의...</description>
+        <pubDate>Sat, 06 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/server/2021/03/06/Container-vs-VM.html</link>
+        <guid isPermaLink="true">http://localhost:4000/server/2021/03/06/Container-vs-VM.html</guid>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>(Docker)Docker 사용법</title>
+        <description>&lt;h3 id=&quot;docker란&quot;&gt;Docker란?&lt;/h3&gt; &lt;p&gt;도커는 컨테이너 기반의 오픈소스 가상화 플랫폼 중 하나이다. Container와 VM의 차이는 &lt;a href=&quot;https://kt1201.github.io/server/2021/03/06/Container-vs-VM.html&quot;&gt;다음&lt;/a&gt; 링크를 참조.&lt;/p&gt; &lt;p&gt;아키텍쳐는 아래와 같다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://kt1201.github.io/assets/posts/20210306_Docker1.png&quot; alt=&quot;20210306_Docker1&quot; /&gt;&lt;/p&gt; &lt;p&gt;Docker는 Client-Server 아키텍쳐이다. Docker Client와 Docker...</description>
+        <pubDate>Sat, 06 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/server/2021/03/06/(Docker)Docker.html</link>
+        <guid isPermaLink="true">http://localhost:4000/server/2021/03/06/(Docker)Docker.html</guid>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+      <item>
+        <title>Proxy 서버 생성</title>
+        <description>&lt;h3 id=&quot;proxy-서버란&quot;&gt;Proxy 서버란?&lt;/h3&gt; &lt;p&gt;Proxy는 자신을 통해서 다른 네트워크에 간접적으로 접속할 수 있도록 해주는 컴퓨터 혹은 프로그램을 가리킨다.&lt;/p&gt; &lt;p&gt;요청을 중계하는 프로그램. proxy 프로그램은 서버로서 작동하기 때문에 일반적으로 proxy 서버라고 한다.&lt;/p&gt; &lt;p&gt;&lt;img...</description>
+        <pubDate>Wed, 24 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/server/2021/02/24/Foward-Proxy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/server/2021/02/24/Foward-Proxy.html</guid>
+        
+        
+        <category>server</category>
+        
+      </item>
+    
+  </channel>
+</rss>

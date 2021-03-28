@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Proxy 서버 생성</title>
+  <meta name="description" content="Proxy 서버란?">
+  
+  <meta name="author" content="sh0626">
+  <meta name="copyright" content="&copy; sh0626 2021">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Proxy 서버란?" />
+  <meta property="og:url" content="http://localhost:4000/server/2021/02/24/Foward-Proxy.html">
+  <meta property="og:site_name" content="코  드  저  장  소" />
+  <meta property="og:title" content="Proxy 서버 생성" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Proxy 서버 생성">
+  <meta name="twitter:description" content="Proxy 서버란?">
+  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://localhost:4000/server/2021/02/24/Foward-Proxy.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/server/2021/02/24/Foward-Proxy.html">
+	<link rel="alternate" type="application/rss+xml" title="코  드  저  장  소" href="http://localhost:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="코  드  저  장  소">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Proxy 서버 생성</h1>
+      <p class="info">by <strong>kt1201</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">February 24, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/server">Server</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h3 id="proxy-서버란">Proxy 서버란?</h3>
+
+<p>Proxy는 자신을 통해서 다른 네트워크에 간접적으로 접속할 수 있도록 해주는 컴퓨터 혹은 프로그램을 가리킨다.</p>
+
+<p>요청을 중계하는 프로그램. proxy 프로그램은 서버로서 작동하기 때문에 일반적으로 proxy 서버라고 한다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210224-Forward-Proxy1.png" alt="20210224-Foward-Proxy1" /></p>
+
+<h4 id="proxy-서버를-구축하는-이유">Proxy 서버를 구축하는 이유</h4>
+
+<ul>
+  <li>보안 : 익명의 사용자가 서버에 직접 접근하는 것을 막는다.</li>
+  <li>속도 : proxy 서버는 사용자의 요청을 cache해서, 동일한 요청이 들어오면 cache의 지원을 반환한다. 이는 속도를 높여준다.</li>
+  <li>ACL : 사이트 접근에 대한 접근 정책을 정의할 수 있다.</li>
+  <li>Log/Audit : 회사 내 직원의 인터넷 사용을 레포팅할 수 있다. 반대로 인트라넷 사용을 레포팅할 수도 있다.</li>
+  <li>지역 네트워크의 제한을 우회하기 위해서 : 보안상의 이유로 80번 외에는 포트를 막아놓는 경우가 있는데, 이러한 제한을 우회해서 원하는 다른 서비스를 이용할 수 있다.</li>
+</ul>
+
+<h3 id="proxy-종류">Proxy 종류</h3>
+
+<h4 id="foward-proxy">Foward Proxy</h4>
+
+<p>클라이언트와 애플리케이션 서버 사이에 위치한다. 클라이언트가 타겟 서버인 애플리케이션에 서비스를 요청할 때, proxy 서버로 요청을 보낸다. 그러면 프록시 서버가 타겟 서버로 요청을 중계한다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210224-Forward-Proxy2.png" alt="20210224-Foward-Proxy2" /></p>
+
+<h4 id="reverse-proxy">Reverse Proxy</h4>
+
+<p>외부에서 접근할 수 없는 애플리케이션 서버를 Proxy 서버를 통하여 접근 가능하다. 클라이언트는 mail.a.com이 아닌 Proxy 서버의 URL인 www.abc.com을 요청한다. 요청을 받은 Proxy 서버는 URL에 맵핑된 애플리케이션 서버로 중계를 한다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210224-Forward-Proxy3.png" alt="20210224-Foward-Proxy3" /></p>
+
+<p>애플리케이션 서버의 정보가 외부로 감취어진다는 이점 외에, 분산 처리 시스템을 만들수 있다는 장점도 있다. Proxy 서버가 요청을 분산하는 역할을 할 수 있기 때문이다.</p>
+
+<h4 id="open-proxy">Open Proxy</h4>
+
+<p>모든 인터넷 사용자가 액세스할 수 있는 Proxy 서버이다. Open Proxy를 이용하면 자신의 IP를 숨길 수 있다.</p>
+
+<p>ex) 중국같은 나라는 정치적 이유로 외부 사이트 접근을 막는 경우가 있다. Open Proxy를 이용하면 접근할 수 있다.</p>
+
+<p>이번 포스트에서는 Foward Proxy 를 구축해 볼 것이다.</p>
+
+<h3 id="서버구성">서버구성</h3>
+
+<p>Docker에 client, proxy1(8080), proxy2(8888)라는 3개의 container를 생성하여 구성하였다.</p>
+
+<p>client - proxy1(8080) - proxy2(8888) - target(www.naver.com)</p>
+
+<p>proxy1과 proxy2는 내 로컬의 8080과 8888로 접근 가능하다.</p>
+
+<p>내 로컬 IP : 192.168.40.134</p>
+
+<p>Docker IP : 172.17.0.1</p>
+
+<p>proxy1(8080)의 <code class="language-plaintext highlighter-rouge">/httpd/apache2/conf/httpd.conf</code>파일 수정</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>hadoop@07e75475864c ~/httpd/apache2/conf]<span class="nv">$ </span>diff original/httpd.conf httpd.conf
+52c52
+&lt; Listen 80
+<span class="nt">---</span>
+<span class="o">&gt;</span> Listen 8080  <span class="c"># 8080 포트로 데이터 수신 대기중</span>
+117,118c117,118
+&lt; <span class="c">#LoadModule proxy_module modules/mod_proxy.so</span>
+&lt; <span class="c">#LoadModule proxy_connect_module modules/mod_proxy_connect.so</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> LoadModule proxy_module modules/mod_proxy.so  <span class="c"># proxy 관련 모듈</span>
+<span class="o">&gt;</span> LoadModule proxy_connect_module modules/mod_proxy_connect.so  <span class="c"># proxy 관련 모듈(https)</span>
+120c120
+&lt; <span class="c">#LoadModule proxy_http_module modules/mod_proxy_http.so</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> LoadModule proxy_http_module modules/mod_proxy_http.so  <span class="c"># proxy 관련 모듈(http)</span>
+194c194
+&lt; <span class="c">#ServerName www.example.com:80</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> ServerName localhost:8080
+503a504,514
+<span class="o">&gt;</span> <span class="c"># forwarding proxy server 설정</span>
+<span class="o">&gt;</span> ProxyRequests On
+<span class="o">&gt;</span> ProxyVia On
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> ProxyRemote <span class="k">*</span> http://192.168.40.134:8888 <span class="c"># 현재 proxy에 대한 원격 proxy를 정의</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> &lt;Proxy <span class="k">*</span><span class="o">&gt;</span>
+<span class="o">&gt;</span> Order deny,allow
+<span class="o">&gt;</span> Deny from all
+<span class="o">&gt;</span> Allow from 172.17.0.1  <span class="c"># 해당 IP에서 들어오는 요청만 허용</span>
+<span class="o">&gt;</span> &lt;/Proxy&gt;
+</code></pre></div></div>
+
+<p>proxy2(8888)의 <code class="language-plaintext highlighter-rouge">/httpd/apache2/conf/httpd.conf</code>파일 수정</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>hadoop@e33cb2ebb52c ~/httpd/apache2/conf]<span class="nv">$ </span>diff original/httpd.conf httpd.conf
+52c52
+&lt; Listen 80
+<span class="nt">---</span>
+<span class="o">&gt;</span> Listen 8888  <span class="c"># 8888 포트로 데이터 수신 대기중</span>
+117,118c117,118
+&lt; <span class="c">#LoadModule proxy_module modules/mod_proxy.so</span>
+&lt; <span class="c">#LoadModule proxy_connect_module modules/mod_proxy_connect.so</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> LoadModule proxy_module modules/mod_proxy.so  <span class="c"># proxy 관련 모듈</span>
+<span class="o">&gt;</span> LoadModule proxy_connect_module modules/mod_proxy_connect.so  <span class="c"># proxy 관련 모듈(https)</span>
+120c120
+&lt; <span class="c">#LoadModule proxy_http_module modules/mod_proxy_http.so</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> LoadModule proxy_http_module modules/mod_proxy_http.so  <span class="c"># proxy 관련 모듈(http)</span>
+194c194
+&lt; <span class="c">#ServerName www.example.com:80</span>
+<span class="nt">---</span>
+<span class="o">&gt;</span> ServerName localhost:8888
+504a505,512
+<span class="o">&gt;</span> <span class="c"># forwarding proxy server 설정</span>
+<span class="o">&gt;</span> ProxyRequests On
+<span class="o">&gt;</span> ProxyVia On
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> &lt;Proxy <span class="k">*</span><span class="o">&gt;</span>
+<span class="o">&gt;</span> Order deny,allow
+<span class="o">&gt;</span> Deny from all
+<span class="o">&gt;</span> Allow from 172.17.0.1  <span class="c"># 해당 IP에서 들어오는 요청만 허용</span>
+<span class="o">&gt;</span> &lt;/Proxy&gt;
+</code></pre></div></div>
+
+<p>client 서버에서</p>
+
+<p><code class="language-plaintext highlighter-rouge">curl --proxy http://192.168.40.134:8080 https://www.naver.com</code></p>
+
+<p>요청을 보내서 네트워크 연결이 되었는지 확인한다.</p>
+
+<p>다음은 proxy서버들을 경유했는지 확인한다.</p>
+
+<p>proxy1서버의 <code class="language-plaintext highlighter-rouge">/httpd/apache2/logs/access_log</code>에 아래와 같은 로그가 출력되면 정상이다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>172.17.0.1 - - <span class="o">[</span>19/Feb/2021:06:46:53 +0000] <span class="s2">"CONNECT www.naver.com:443 HTTP/1.1"</span> 200 -
+</code></pre></div></div>
+
+<p>proxy2서버의 <code class="language-plaintext highlighter-rouge">/httpd/apache2/logs/access_log</code>에 아래와 같은 로그가 출력되면 정상이다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>172.17.0.1 - - <span class="o">[</span>19/Feb/2021:06:46:53 +0000] <span class="s2">"CONNECT www.naver.com:443 HTTP/1.0"</span> 200 -
+</code></pre></div></div>
+
+
+</article>
+
+
+
+
+
+
+<section class="post-navigation">
+	<span class="prev-post">
+		
+			<a href="/python/2021/02/24/JSON-load,-loads,-dump,-dumps.html">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+				<span class="page-number">json load, loads, dump, dumps</span>
+			</a>
+		
+	</span>
+	<span class="next-post">
+		
+			<a href="/server/2021/03/06/(Docker)Docker.html">
+				<span class="page-number">(Docker)Docker 사용법</span>
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		
+	</span>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">코  드  저  장  소</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:sonhokg@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">sonhokg@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/sh0626" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sh0626</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong><a href="/feed.xml">blog code</a></strong></p>
+      <p class="text">김선호의 블로그입니다.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hadoop 멀티모드 구축</title>
+  <meta name="description" content="Hadoop 멀티모드 구축">
+  
+  <meta name="author" content="sh0626">
+  <meta name="copyright" content="&copy; sh0626 2021">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Hadoop 멀티모드 구축" />
+  <meta property="og:url" content="http://localhost:4000/hadoop/2020/06/03/Hadoop-Multimode.html">
+  <meta property="og:site_name" content="코  드  저  장  소" />
+  <meta property="og:title" content="Hadoop 멀티모드 구축" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hadoop 멀티모드 구축">
+  <meta name="twitter:description" content="Hadoop 멀티모드 구축">
+  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://localhost:4000/hadoop/2020/06/03/Hadoop-Multimode.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/hadoop/2020/06/03/Hadoop-Multimode.html">
+	<link rel="alternate" type="application/rss+xml" title="코  드  저  장  소" href="http://localhost:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="코  드  저  장  소">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Hadoop 멀티모드 구축</h1>
+      <p class="info">by <strong>kt1201</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">June 3, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/hadoop">Hadoop</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="hadoop-멀티모드-구축">Hadoop 멀티모드 구축</h2>
+
+<ul>
+  <li>Slave 생성
+    <ul>
+      <li>File - Export to OVF… // Master 배포</li>
+      <li>File - Open - 이름과 경로 지정 - Import // Slave 생성</li>
+      <li>network 맞춰주고 Take snapshot</li>
+      <li>slave들은 Memory 1GB로 변경 (자신의 컴퓨터 성능에 따라 선택)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="각-서버-계정-명-변경">각 서버 계정 명 변경</h4>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /etc/hostname</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">dd</code>(삭제) 후 각 이름 변경</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo /bin/hostname -F /etc/hostname</code> // 적용</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo reboot</code> // reboot 한 후 각 계정 이름 바뀐거 확인</p>
+
+<h4 id="master에서-실행">Master에서 실행</h4>
+
+<p><code class="language-plaintext highlighter-rouge">stop-dfs.sh</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">rm -rf /usr/local/hadoop/hdfs/datanode</code> // Slave 서버가 datanode 역할</p>
+
+<p><code class="language-plaintext highlighter-rouge">ls /usr/local/hadoop/hdfs/namenode</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">rm -rf /usr/local/hadoop/hdfs/namenode/*</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /etc/hosts</code> // 4개 서버 모두 적용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>192.168.100.10  master
+192.168.100.20  slave1
+192.168.100.30  slave2
+192.168.100.40  slave3
+</code></pre></div></div>
+
+<p>// slaves 설정 (모든 서버 적용)</p>
+
+<p>`sudo vim /usr/local/hadoop/etc/hadoop/slaves // 아래 코드로 변경</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slave1
+slave2
+slave3
+</code></pre></div></div>
+
+<p>// Master에서 노드 변경</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /usr/local/hadoop/etc/hadoop/hdfs-site.xml</code> // 아래 코드로 변경(Master만)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+	&lt;property&gt;
+		&lt;name&gt;dfs.replication&lt;/name&gt;
+		&lt;value&gt;3&lt;/value&gt;
+	&lt;/property&gt;
+	&lt;property&gt;
+		&lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+		&lt;value&gt;file:/usr/local/hadoop/hdfs/namenode&lt;/value&gt;
+	&lt;/property&gt;
+	&lt;property&gt;
+		&lt;name&gt;dfs.http.address&lt;/name&gt;
+		&lt;value&gt;master:50070&lt;/value&gt;
+	&lt;/property&gt;
+	&lt;property&gt;
+		&lt;name&gt;dfs.secondary.http.address&lt;/name&gt;
+		&lt;value&gt;slave1:50090&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /usr/local/hadoop/etc/hadoop/mapred-site.xml</code> // 아래 코드로 변경(4개 서버 모두)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+	&lt;property&gt;
+		&lt;name&gt;mapred.job.tracker&lt;/name&gt;
+		&lt;value&gt;master:62351&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /usr/local/hadoop/etc/hadoop/core-site.xml</code> // 아래 코드로 변경(4개 서버 모두)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+	&lt;property&gt;
+		&lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+		&lt;value&gt;/usr/local/hadoop/tmp&lt;/value&gt;
+	&lt;/property&gt;
+	&lt;property&gt;
+		&lt;name&gt;fs.default.name&lt;/name&gt;
+		&lt;value&gt;hdfs://master:62350&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<p>// 인증키 생성 및 배포 (master에서 실행)</p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-keygen -t rsa</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-copy-id -i .ssh/id_rsa.pub manager@master</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-copy-id -i .ssh/id_rsa.pub manager@slave1</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-copy-id -i .ssh/id_rsa.pub manager@slave2</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ssh-copy-id -i .ssh/id_rsa.pub manager@slave3</code></p>
+
+<p>// Slave에서 실행 (들어오는 내용을 저장만 하면 되는 서버들. datanode)</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo vim /usr/local/hadoop/etc/hadoop/hdfs-site.xml</code></p>
+
+<p>// 아래 코드로 변경 <configuration> 아래서 8dd</configuration></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration&gt;
+        &lt;property&gt;
+                &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+                &lt;value&gt;file:/usr/local/hadoop/hdfs/datanode&lt;/value&gt;
+        &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">sudo rm -rf /usr/local/hadoop/hdfs/namenode</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo rm -rf /usr/local/hadoop/hdfs/datanode/*</code></p>
+
+<p>// Master에서 hadoop 실행</p>
+
+<p><code class="language-plaintext highlighter-rouge">hadoop namenode -format</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">start-all.sh</code> // 4개 서버가 모두 돌아야 함</p>
+
+<p><code class="language-plaintext highlighter-rouge">jps</code> // 아래처럼 나와야함</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>master : NameNode, Jps, ResourceManager
+slave1 : NodeManager, DataNode, Jps, SecondaryNameNode
+slave2 : Jps, NodeManager, DataNode
+slave3 : Jps, NodeManager, DataNode
+</code></pre></div></div>
+
+<h4 id="web-1921681001050070">Web (192.168.100.10:50070)</h4>
+
+<ul>
+  <li>Livenode : 3 확인</li>
+</ul>
+
+
+</article>
+
+
+
+
+
+
+<section class="post-navigation">
+	<span class="prev-post">
+		
+			<a href="/hadoop/2020/06/02/Hadoop-Singlemode.html">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+				<span class="page-number">Hadoop 싱글모드 구축</span>
+			</a>
+		
+	</span>
+	<span class="next-post">
+		
+			<a href="/hadoop/2020/06/04/WordCount.html">
+				<span class="page-number">WordCount 코딩 및 실행</span>
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		
+	</span>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">코  드  저  장  소</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:sonhokg@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">sonhokg@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/sh0626" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sh0626</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong><a href="/feed.xml">blog code</a></strong></p>
+      <p class="text">김선호의 블로그입니다.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

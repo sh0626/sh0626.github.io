@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>(Docker)Docker 사용법</title>
+  <meta name="description" content="Docker란?">
+  
+  <meta name="author" content="sh0626">
+  <meta name="copyright" content="&copy; sh0626 2021">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Docker란?" />
+  <meta property="og:url" content="http://localhost:4000/server/2021/03/06/(Docker)Docker.html">
+  <meta property="og:site_name" content="코  드  저  장  소" />
+  <meta property="og:title" content="(Docker)Docker 사용법" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://localhost:4000/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="(Docker)Docker 사용법">
+  <meta name="twitter:description" content="Docker란?">
+  <meta name="twitter:image" content="http://localhost:4000/assets/logo.png">
+  <meta name="twitter:url" content="http://localhost:4000/server/2021/03/06/(Docker)Docker.html">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/server/2021/03/06/(Docker)Docker.html">
+	<link rel="alternate" type="application/rss+xml" title="코  드  저  장  소" href="http://localhost:4000/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="코  드  저  장  소">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">(Docker)Docker 사용법</h1>
+      <p class="info">by <strong>kt1201</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">March 6, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/server">Server</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h3 id="docker란">Docker란?</h3>
+
+<p>도커는 컨테이너 기반의 오픈소스 가상화 플랫폼 중 하나이다. Container와 VM의 차이는 <a href="https://kt1201.github.io/server/2021/03/06/Container-vs-VM.html">다음</a> 링크를 참조.</p>
+
+<p>아키텍쳐는 아래와 같다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210306_Docker1.png" alt="20210306_Docker1" /></p>
+
+<p>Docker는 Client-Server 아키텍쳐이다. Docker Client와 Docker Demon이 RespAPI를 사용하여 통신한다.</p>
+
+<h5 id="docker-데몬">Docker 데몬</h5>
+
+<p>Docker Api 요청수신, 이미지,컨테이너,네트워크와 같은 도커 객체 및 도커 서비스 관리</p>
+
+<h5 id="docker-클라이언트">Docker 클라이언트</h5>
+
+<p>Docker 사용자가 Docker와 상호작용하기 위한 방법. 기본적인 도커명령어를 통해서 Docker 데몬과 통신</p>
+
+<h5 id="docker-레지스트리">Docker 레지스트리</h5>
+
+<p>Docker 이미지를 저장, Docker hub이라는 공용 레지스트리와 개인private한 레지스트리가 있다. 일반적으로 공용 레지스트리에서 실행</p>
+
+<h5 id="docker-객체">Docker 객체</h5>
+
+<p>도커 이미지: 도커 이미지는 컨테이너 실행에 필요한 파일과 설정값등을 포함하고 있다.</p>
+
+<p>컨테이너 : 컨테이너는 도커 이미지의 실행 가능한 인스턴스</p>
+
+<h3 id="docker-설치">Docker 설치</h3>
+
+<p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a>에서 자신에게 맞는 OS의 Docker를 다운로드 받는다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210306_Docker2.png" alt="20210306_Docker2" /></p>
+
+<p>다운로드 받은 설치파일을 실행시키고 OK를 누르면 설치가 시작된다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210306_Docker3.png" alt="20210306_Docker3" /></p>
+
+<p><br /></p>
+
+<h3 id="docker-실행-시-wsl-installation-오류">Docker 실행 시 WSL installation 오류</h3>
+
+<p>Docker 실행시 다음과 같은 오류 메세지가 나오면 해당 링크로 가서 관련 파일을 설치해 준 후 재기동 하면 된다.</p>
+
+<p><img src="https://kt1201.github.io/assets/posts/20210306_Docker-Download3.png" alt="20210306_Docker-Download3" /></p>
+
+<h3 id="docker-image-다운로드">Docker Image 다운로드</h3>
+
+<p>Docker 설치가 완료되면 cmd나 terminal을 열고 아래 명령어로 Docker Image를 다운로드 받는다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker pull 이미지명
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-container-생성-및-구동">Docker Container 생성 및 구동</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Container를 생성하고 구동하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p>설치된 Docker Desktop을 실행시키고 왼쪽메뉴에 Images를 눌러보면 아래와 같이 다운받았던 Docker image가 생성되어 있다.</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker5.png" alt="20210306_Docker5" /></p>
+  </li>
+  <li>
+    <p>생성된 Docker 이미지의 RUN 버튼을 누르면 아래와 같은 팝업이 뜬다.</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker6.png" alt="20210306_Docker6" /></p>
+  </li>
+  <li>
+    <p>Optional Settings를 눌러준다.</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker7.png" alt="20210306_Docker7" /></p>
+  </li>
+  <li>
+    <p>위 그림과 같이 연결 포트를 설정해 줄 수 있다. 나의 경우엔 아래와 같이 hive, postgres, tomcat의 포트를 설정해 주었다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Optional Settings</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Container Name</td>
+          <td>datalake(자유대로 명명)</td>
+        </tr>
+        <tr>
+          <td>Port</td>
+          <td>10000  10000/tcp  (hive)<br />5432  5432/tcp  (postgres)<br />8888  8888/tcp  (tomcat)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>그 아래 Volumes을 통하여 local과 container간에 이어지는 공유폴더를 생성할 수 있다.</p>
+
+    <ul>
+      <li>Host Path에 local 경로인 C:\test를 적고, Container Path에 /home/hadoop/test를 적고, local의 test폴더에 파일을 올려놓으면 Container안의 test 폴더에서도 볼 수 있다.</li>
+    </ul>
+
+    <p>설정을 한 후 Run을 누르면 Docker Container가 생성 및 구동된다.</p>
+
+    <p>왼쪽 메뉴의 Containers/Apps을 누르면 아래 그림과 같이 Container가 생성되어 있는 것을 볼 수 있다.</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker8.png" alt="20210306_Docker8" /></p>
+  </li>
+</ul>
+
+<p>명령어로 Container를 생성하고 구동하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">docker create</code>으로 Container를 생성하고, <code class="language-plaintext highlighter-rouge">docker start</code>로 구동한다. 명령어는 아래와 같다.</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker create <span class="nt">--name</span> datalake <span class="nt">-p</span> 10000:10000 <span class="nt">-p</span> 5432:5432 <span class="nt">-p</span> 8888:8888 이미지명
+<span class="nv">$ </span>docker start datalake
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>위 두 개의 명령어를 <code class="language-plaintext highlighter-rouge">docker run</code>으로 한번에 생성, 구동시킬 수도 있다.</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--name</span> datalake <span class="nt">-p</span> 10000:10000 <span class="nt">-p</span> 5432:5432 <span class="nt">-p</span> 8888:8888 이미지명
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="docker-terminal-실행">Docker Terminal 실행</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Terminal을 실행하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>RUNNING 상태의 Container의 CLI를 Click</li>
+</ul>
+
+<p>명령어로 터미널을 실행하는 방법은 아래와 같다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> datalake bash
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-log">Docker Log</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Log를 보는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p>생성된 Container를 Click 한다.</p>
+
+    <p>아래와 같이 Log를 볼 수 있다.</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker9.png" alt="20210306_Docker9" /></p>
+  </li>
+</ul>
+
+<p>명령어로 Log를 보는 방법은 아래와 같다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker logs <span class="nt">-f</span> datalake
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-container-종료">Docker Container 종료</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Container를 종료하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>RUNNING상태의 Container의 Stop을 Click</li>
+</ul>
+
+<p>명령어로 Container를 종료하는 방법은 아래와 같다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> datalake shutdown.sh
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-container-구동">Docker Container 구동</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Container를 구동하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>기존에 생성되어 있던 Container의 Start을 Click</li>
+</ul>
+
+<p>명령어로 Container를 구동하는 방법은 아래와 같다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker start datalake
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-container-제거">Docker Container 제거</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Container를 제거하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>기존에 생성되어 있던 Container의 Delete를 Click</li>
+</ul>
+
+<p>명령어로 Container를 제거하는 방법은 아래와 같다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker <span class="nb">rm </span>datalake
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="docker-image-제거">Docker Image 제거</h3>
+
+<p>GUI로 구성된 Docker Desktop에서 Image를 제거하는 방법은 아래와 같다.</p>
+
+<ul>
+  <li>
+    <p>기존에 있던 Image의 Remove를 Click</p>
+
+    <p><img src="https://kt1201.github.io/assets/posts/20210306_Docker10.png" alt="20210306_Docker10" /></p>
+  </li>
+</ul>
+
+<p>명령어로 Container를 제거하는 방법은 아래와 같다.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>docker rmi 이미지명
+</code></pre></div></div>
+
+</article>
+
+
+
+
+
+
+<section class="post-navigation">
+	<span class="prev-post">
+		
+			<a href="/server/2021/02/24/Foward-Proxy.html">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+				<span class="page-number">Proxy 서버 생성</span>
+			</a>
+		
+	</span>
+	<span class="next-post">
+		
+			<a href="/server/2021/03/06/Container-vs-VM.html">
+				<span class="page-number">Container vs VM</span>
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+		
+	</span>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">코  드  저  장  소</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:sonhokg@naver.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">sonhokg@naver.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/sh0626" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">sh0626</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong><a href="/feed.xml">blog code</a></strong></p>
+      <p class="text">김선호의 블로그입니다.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
